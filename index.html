@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="home-page">
+        <div class="user-details">
+            <img src="testbook.png" alt="logo">
+            <h1>Hello User!</h1>
+            <p>Enter your name to continue the Quiz.</p>
+            <input type="text" id="name" placeholder="Enter your name...">
+            <button onclick="startQuiz()">Enter</button>
+            <h3>You'll have 10 seconds to answer each question</h3>
+        </div>
+
+        <hr>
+
+        <div class="category" id="category">
+            <h1>Select Category</h1>
+            <button onclick="startCategory('Pipes and Cisterns')">Pipes and Cisterns</button>
+            <button onclick="startCategory('Probability')">Probability</button>
+            <button onclick="startCategory('Problems on Age')">Problems on Age</button>
+            <button onclick="startCategory('Profit and Loss')">Profit and Loss</button>
+        </div>
+    </div>
+    
+    <div class="quiz-container container" id="quiz-page" style="display: none;">
+        <div class="header">
+            <div class="timer"><span id="timer">0</span></div>
+            
+        </div>
+        <div class="question-container">
+            <div class="question-number"><span id="question-number">1/10</span></div>
+            <div class="question-box">
+                <p id="question-text"></p>
+            </div>
+        </div>
+        <div class="options" id="options">
+            <button class="option" onclick="selectOption(0)"></button>
+            <button class="option" onclick="selectOption(1)"></button>
+            <button class="option" onclick="selectOption(2)"></button>
+            <button class="option" onclick="selectOption(3)"></button>
+        </div>
+        <button id="next-button" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <div id="result-container" class="container" style="display: none;">
+        <h2>Quiz Result</h2><br>
+        <p> <span id="participant-name"></span>Your result is</p><br>
+        <p>Total time taken:<span id="total-time"></span> seconds</p><br>
+        <p>Total Questions:<span id="total-questions"></span></p><br>
+        <p>Attempt:<span id="attempt"></span></p><br>
+        <p>No of Correct Questions:<span id="correct-questions"></span></p><br>
+        <p>No of Wrong Questions:<span id="wrong-questions"></span></p><br>
+        <p>Score in percentage:<span id="score-percentage"></span>%</p><br>
+        <button onclick="restartQuiz()">Start Again</button>
+        <button onclick="goToHome()">Go to Home</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
